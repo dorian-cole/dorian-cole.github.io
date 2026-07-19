@@ -17,9 +17,9 @@
   --ink-dim:          #706b58;   /* dim ochre */
   --rule:             #2a3a2f;   /* dark moss rule */
   --rule-strong:      #46604e;   /* stronger moss */
-  --accent:           #f6ecd3;   /* warm ivory — candlelit-page white */
-  --accent-deep:      #c8bd9b;   /* muted ivory, for inactive numerals */
-  --marker:           #98b085;   /* sage moss — for the flagship award & links */
+  --accent:           #a591b8;   /* soft amethyst — illuminated-manuscript purple */
+  --accent-deep:      #7c6989;   /* deeper amethyst, for inactive numerals */
+  --marker:           #98b085;   /* sage moss — reserved for the flagship award */
 
   /* ----- typography ----- */
   --serif-display:    "Cormorant Garamond", "Cormorant Infant", "Adobe Caslon Pro", "Garamond", serif;
@@ -49,9 +49,9 @@ body {
   font-variant-numeric: oldstyle-nums proportional-nums;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* candlelight vignette (pale ivory top-left, sage bottom-right) + faint grain */
+  /* candlelight vignette (amethyst top-left, sage bottom-right) + faint grain */
   background-image:
-    radial-gradient(ellipse 60% 45% at 18% -8%, rgba(246, 236, 211, 0.08), transparent 62%),
+    radial-gradient(ellipse 60% 45% at 18% -8%, rgba(165, 145, 184, 0.10), transparent 62%),
     radial-gradient(ellipse 55% 40% at 88% 105%, rgba(127, 150, 112, 0.06), transparent 65%),
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.11 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-attachment: fixed, fixed, fixed;
@@ -75,9 +75,9 @@ p {
 }
 
 a {
-  color: var(--marker);
+  color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--marker) 55%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
   padding-bottom: 1px;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
