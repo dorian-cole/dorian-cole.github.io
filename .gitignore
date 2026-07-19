@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# reference/source docs kept locally, not published to the site
+Dorian Cole CV.pdf
+*.pdf
+_reference/

@@ -3,38 +3,275 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="color-scheme" content="dark" />
   <title>Dorian Cole</title>
-  <meta name="description" content="Dorian Cole — portfolio site, coming soon." />
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #ffffff;
-      --fg: #111418;
-      --muted: #5b6473;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #0b0d12; --fg: #e6e8ee; --muted: #9098a6; }
-    }
-    html, body { margin: 0; height: 100%; }
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    main { max-width: 32rem; }
-    h1 { margin: 0 0 0.5rem; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; }
-    p { margin: 0; color: var(--muted); line-height: 1.55; }
-  </style>
+  <meta name="description" content="[Meta description — one sentence about Dorian's work]" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dorian Cole" />
+  <meta property="og:description" content="[Meta description]" />
+  <meta property="og:url" content="https://dorian-cole.github.io/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dorian Cole" />
+  <meta name="twitter:description" content="[Meta description]" />
+
+  <link rel="canonical" href="https://dorian-cole.github.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Cormorant+SC:wght@300..700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script src="./assets/main.js" defer></script>
 </head>
 <body>
-  <main>
-    <h1>Dorian Cole</h1>
-    <p>Site coming soon.</p>
-  </main>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="volume">
+
+    <!-- ============================================================
+         MASTHEAD — title page
+         ============================================================ -->
+    <header class="masthead">
+      <p class="mast-eyebrow" aria-hidden="true">✦ &nbsp; ex libris &nbsp; ✦</p>
+      <h1 class="mast-title">Dorian Cole</h1>
+      <p class="mast-role">[Role &amp; affiliation — e.g. Doctoral candidate, Department of ______, University of ______]</p>
+    </header>
+
+    <!-- ============================================================
+         HERO — introduction body
+         ============================================================ -->
+    <section class="hero" aria-label="Introduction">
+      <p class="positioning">[Positioning statement — one line, under 15 words]</p>
+
+      <div class="bio">
+        <p>[First paragraph of bio. This paragraph gets the drop cap, so open with a strong opening letter and a full-sentence introduction of who Dorian is, what fields they work in, and where.]</p>
+        <p>[Second paragraph of bio. What they study, methodological approach, current project or dissertation focus.]</p>
+        <p>[Optional third paragraph — additional context, current position, or where they can be reached.]</p>
+      </div>
+
+      <ul class="contact-list" aria-label="Contact">
+        <li>
+          <span class="label">Correspondence</span>
+          <span>[Email address]</span>
+        </li>
+        <li>
+          <span class="label">Department</span>
+          <span>[Department affiliation, mailing address, or office]</span>
+        </li>
+        <li>
+          <span class="label">Elsewhere</span>
+          <span>[Any additional links — institutional page, academia.edu, personal handles, ORCID]</span>
+        </li>
+      </ul>
+    </section>
+
+    <div class="ornament" aria-hidden="true">⁂</div>
+
+    <!-- ============================================================
+         CHAPTER TABS — sections of the volume
+         ============================================================ -->
+    <nav class="chapters" role="tablist" aria-label="Sections">
+      <button type="button" role="tab" aria-selected="true"  tabindex="0"  data-target="research"  id="tab-research"  aria-controls="research">
+        <span class="chapter-numeral">I</span>
+        <span class="chapter-label">Research</span>
+      </button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1" data-target="teaching"  id="tab-teaching"  aria-controls="teaching">
+        <span class="chapter-numeral">II</span>
+        <span class="chapter-label">Teaching</span>
+      </button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1" data-target="community" id="tab-community" aria-controls="community">
+        <span class="chapter-numeral">III</span>
+        <span class="chapter-label">Community</span>
+      </button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1" data-target="awards"    id="tab-awards"    aria-controls="awards">
+        <span class="chapter-numeral">IV</span>
+        <span class="chapter-label">Awards</span>
+      </button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1" data-target="personal"  id="tab-personal"  aria-controls="personal">
+        <span class="chapter-numeral">V</span>
+        <span class="chapter-label">Personal</span>
+      </button>
+    </nav>
+
+    <main id="main">
+
+      <!-- ============================================================
+           I. RESEARCH
+           ============================================================ -->
+      <section id="research" class="panel" role="tabpanel" aria-labelledby="tab-research">
+        <div class="panel-head">
+          <p class="panel-eyebrow">Chapter I</p>
+          <h2 class="panel-title">Research</h2>
+        </div>
+
+        <div class="panel-lead">
+          <p>[Overview paragraph — research interests, methodological orientation, questions the work asks. Lift from CV research statement or bio.]</p>
+        </div>
+
+        <div class="entries">
+          <article class="entry">
+            <h3 class="entry-title">[Title of work — book, article, chapter, or paper]</h3>
+            <p class="entry-meta">[Venue] &nbsp;·&nbsp; [Year]</p>
+            <p class="entry-body">[Brief description, abstract excerpt, or annotation.]</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">[Title]</h3>
+            <p class="entry-meta">[Venue] &nbsp;·&nbsp; [Year]</p>
+            <p class="entry-body">[Description]</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">[Title]</h3>
+            <p class="entry-meta">[Venue] &nbsp;·&nbsp; [Year]</p>
+            <p class="entry-body">[Description]</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">[Title]</h3>
+            <p class="entry-meta">[Venue] &nbsp;·&nbsp; [Year]</p>
+            <p class="entry-body">[Description]</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           II. TEACHING
+           ============================================================ -->
+      <section id="teaching" class="panel" role="tabpanel" aria-labelledby="tab-teaching" hidden>
+        <div class="panel-head">
+          <p class="panel-eyebrow">Chapter II</p>
+          <h2 class="panel-title">Teaching</h2>
+        </div>
+
+        <div class="panel-lead">
+          <p>[Teaching philosophy paragraph — approach, principles, what students take away. Lift from CV teaching statement.]</p>
+        </div>
+
+        <div class="entries">
+          <article class="entry">
+            <h3 class="entry-title">[Course title]</h3>
+            <p class="entry-meta">[Course code] &nbsp;·&nbsp; [Institution] &nbsp;·&nbsp; [Term/Year]</p>
+            <p class="entry-body">[Course description or role — instructor of record, TA, guest lecturer.]</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">[Course title]</h3>
+            <p class="entry-meta">[Course code] &nbsp;·&nbsp; [Institution] &nbsp;·&nbsp; [Term/Year]</p>
+            <p class="entry-body">[Description]</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">[Course title]</h3>
+            <p class="entry-meta">[Course code] &nbsp;·&nbsp; [Institution] &nbsp;·&nbsp; [Term/Year]</p>
+            <p class="entry-body">[Description]</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           III. COMMUNITY
+           ============================================================ -->
+      <section id="community" class="panel" role="tabpanel" aria-labelledby="tab-community" hidden>
+        <div class="panel-head">
+          <p class="panel-eyebrow">Chapter III</p>
+          <h2 class="panel-title">Community</h2>
+        </div>
+
+        <div class="panel-lead">
+          <p>[Lead paragraph — service, engagement, mentorship, public-facing work.]</p>
+        </div>
+
+        <div class="entries">
+          <article class="entry">
+            <h3 class="entry-title">[Role or organization]</h3>
+            <p class="entry-meta">[Institution or body] &nbsp;·&nbsp; [Dates]</p>
+            <p class="entry-body">[Description of the role, work, or contribution.]</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">[Role or organization]</h3>
+            <p class="entry-meta">[Institution] &nbsp;·&nbsp; [Dates]</p>
+            <p class="entry-body">[Description]</p>
+          </article>
+
+          <article class="entry">
+            <h3 class="entry-title">[Role or organization]</h3>
+            <p class="entry-meta">[Institution] &nbsp;·&nbsp; [Dates]</p>
+            <p class="entry-body">[Description]</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           IV. AWARDS
+           ============================================================ -->
+      <section id="awards" class="panel" role="tabpanel" aria-labelledby="tab-awards" hidden>
+        <div class="panel-head">
+          <p class="panel-eyebrow">Chapter IV</p>
+          <h2 class="panel-title">Awards</h2>
+        </div>
+
+        <div class="panel-lead">
+          <p>[Optional lead paragraph, or leave the list to speak for itself.]</p>
+        </div>
+
+        <ul class="award-list">
+          <li class="marker">
+            <span class="award-year">[Year]</span>
+            <div>
+              <p class="award-name">[Award or fellowship name]</p>
+              <p class="award-org">[Awarding institution or body]</p>
+            </div>
+          </li>
+          <li>
+            <span class="award-year">[Year]</span>
+            <div>
+              <p class="award-name">[Award or fellowship name]</p>
+              <p class="award-org">[Awarding institution]</p>
+            </div>
+          </li>
+          <li>
+            <span class="award-year">[Year]</span>
+            <div>
+              <p class="award-name">[Award or fellowship name]</p>
+              <p class="award-org">[Awarding institution]</p>
+            </div>
+          </li>
+          <li>
+            <span class="award-year">[Year]</span>
+            <div>
+              <p class="award-name">[Award or fellowship name]</p>
+              <p class="award-org">[Awarding institution]</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============================================================
+           V. PERSONAL
+           ============================================================ -->
+      <section id="personal" class="panel" role="tabpanel" aria-labelledby="tab-personal" hidden>
+        <div class="panel-head">
+          <p class="panel-eyebrow">Chapter V</p>
+          <h2 class="panel-title">Personal</h2>
+        </div>
+
+        <div class="personal-body">
+          <p>[Opening paragraph — this one gets a drop cap. Interests, curiosities, life outside the academy.]</p>
+          <p>[Second paragraph — anything else Dorian would like a reader to know about them beyond the CV.]</p>
+          <p>[Optional third paragraph.]</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="colophon">
+      <p>© [Year] &nbsp; · &nbsp; Dorian Cole &nbsp; · &nbsp; [Location]</p>
+    </footer>
+
+  </div>
 </body>
 </html>
