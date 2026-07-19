@@ -8,18 +8,18 @@
    ============================================================ */
 
 :root {
-  /* ----- palette ----- */
-  --paper:            #0f1a13;   /* deep pine — near-black warm green */
-  --paper-2:          #14211a;   /* slightly lifted */
-  --paper-3:          #1c2b22;   /* elevated surfaces */
-  --ink:              #e8dfc4;   /* aged parchment */
-  --ink-mute:         #a89f8a;   /* faded ivory */
-  --ink-dim:          #706b58;   /* dim ochre */
-  --rule:             #2a3a2f;   /* dark moss rule */
-  --rule-strong:      #46604e;   /* stronger moss */
-  --accent:           #a591b8;   /* soft amethyst — illuminated-manuscript purple */
-  --accent-deep:      #7c6989;   /* deeper amethyst, for inactive numerals */
-  --marker:           #98b085;   /* sage moss — reserved for the flagship award */
+  /* ----- palette (autumn dark academia) ----- */
+  --paper:            #1a1208;   /* deep chestnut — near-black warm oak */
+  --paper-2:          #221a0e;   /* slightly lifted */
+  --paper-3:          #2c2213;   /* elevated surfaces */
+  --ink:              #ecdfc0;   /* aged parchment */
+  --ink-mute:         #b09877;   /* faded ivory / dry-leaf tan */
+  --ink-dim:          #7d6952;   /* dim ochre */
+  --rule:             #3a2a1a;   /* dark cocoa rule */
+  --rule-strong:      #5c4432;   /* stronger cocoa */
+  --accent:           #c17b3f;   /* burnt amber — autumn leaf */
+  --accent-deep:      #8a5528;   /* deeper amber */
+  --marker:           #7a9670;   /* dried moss — reserved for the flagship award */
 
   /* ----- typography ----- */
   --serif-display:    "Cormorant Garamond", "Cormorant Infant", "Adobe Caslon Pro", "Garamond", serif;
@@ -49,11 +49,11 @@ body {
   font-variant-numeric: oldstyle-nums proportional-nums;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* candlelight vignette (amethyst top-left, sage bottom-right) + faint grain */
+  /* firelight vignette (warm amber top-left, dried moss bottom-right) + faint warm grain */
   background-image:
-    radial-gradient(ellipse 60% 45% at 18% -8%, rgba(165, 145, 184, 0.10), transparent 62%),
-    radial-gradient(ellipse 55% 40% at 88% 105%, rgba(127, 150, 112, 0.06), transparent 65%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.11 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    radial-gradient(ellipse 60% 45% at 18% -8%, rgba(193, 123, 63, 0.12), transparent 62%),
+    radial-gradient(ellipse 55% 40% at 88% 105%, rgba(122, 150, 112, 0.06), transparent 65%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.10 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-attachment: fixed, fixed, fixed;
 }
 
