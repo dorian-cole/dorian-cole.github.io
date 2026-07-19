@@ -1,6 +1,7 @@
 /* ============================================================
    Dorian Cole — portfolio
-   Dark-academia editorial: deep walnut + aged parchment + brass.
+   Dark-academia editorial: pine-green paper, aged parchment
+   ink, muted maroon accent, sage marker.
    Type: Cormorant Garamond (display), EB Garamond (body),
          Cormorant SC (small-caps).
    No mono. No canvas animation. Static, moody, book-like.
@@ -8,17 +9,17 @@
 
 :root {
   /* ----- palette ----- */
-  --night:            #16110d;   /* deep walnut */
-  --night-2:          #1c1611;   /* slightly lifted for entries */
-  --night-3:          #24190f;   /* elevated surfaces */
-  --parchment:        #ecdfc0;   /* aged parchment ink */
-  --parchment-mute:   #b09877;   /* faded ivory */
-  --parchment-dim:    #7d6952;   /* dim ochre */
-  --tobacco:          #3a2a1e;   /* rule / divider */
-  --tobacco-strong:   #5c4432;   /* stronger rule */
-  --brass:            #c9a961;   /* aged brass accent */
-  --brass-deep:       #a08040;   /* darker brass */
-  --oxblood:          #8a3535;   /* marker — awards, special emphasis */
+  --paper:            #0f1a13;   /* deep pine — near-black warm green */
+  --paper-2:          #14211a;   /* slightly lifted */
+  --paper-3:          #1c2b22;   /* elevated surfaces */
+  --ink:              #e8dfc4;   /* aged parchment */
+  --ink-mute:         #a89f8a;   /* faded ivory */
+  --ink-dim:          #706b58;   /* dim ochre */
+  --rule:             #2a3a2f;   /* dark moss rule */
+  --rule-strong:      #46604e;   /* stronger moss */
+  --accent:           #a24545;   /* muted maroon */
+  --accent-deep:      #7a2f2f;   /* deeper maroon */
+  --marker:           #7f9670;   /* sage moss — for the flagship award */
 
   /* ----- typography ----- */
   --serif-display:    "Cormorant Garamond", "Cormorant Infant", "Adobe Caslon Pro", "Garamond", serif;
@@ -28,7 +29,7 @@
   --measure:          62ch;
   --volume:           720px;
   --radius:           0;         /* no rounded corners — this is print, not UI */
-  --shadow-focus:     0 0 0 2px var(--brass);
+  --shadow-focus:     0 0 0 2px var(--accent);
 
   color-scheme: dark;
 }
@@ -39,8 +40,8 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--night);
-  color: var(--parchment);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--serif-body);
   font-size: 19px;
   line-height: 1.68;
@@ -48,11 +49,11 @@ body {
   font-variant-numeric: oldstyle-nums proportional-nums;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* candlelight vignette + faint paper grain */
+  /* candlelight vignette (maroon top-left, sage bottom-right) + faint grain */
   background-image:
-    radial-gradient(ellipse 60% 45% at 18% -8%, rgba(201, 169, 97, 0.11), transparent 60%),
-    radial-gradient(ellipse 55% 40% at 88% 105%, rgba(138, 53, 53, 0.07), transparent 65%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.14 0 0 0 0 0.10 0 0 0 0.055 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    radial-gradient(ellipse 60% 45% at 18% -8%, rgba(162, 69, 69, 0.14), transparent 62%),
+    radial-gradient(ellipse 55% 40% at 88% 105%, rgba(127, 150, 112, 0.06), transparent 65%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.11 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-attachment: fixed, fixed, fixed;
 }
 
@@ -65,7 +66,7 @@ h1, h2, h3, h4 {
   line-height: 1.15;
   margin: 0 0 0.5em;
   letter-spacing: -0.005em;
-  color: var(--parchment);
+  color: var(--ink);
 }
 
 p {
@@ -74,15 +75,15 @@ p {
 }
 
 a {
-  color: var(--brass);
+  color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--brass) 40%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
   padding-bottom: 1px;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 a:hover {
-  color: var(--parchment);
-  border-bottom-color: var(--parchment);
+  color: var(--ink);
+  border-bottom-color: var(--ink);
 }
 a:focus-visible {
   outline: none;
@@ -90,16 +91,16 @@ a:focus-visible {
 }
 
 em { font-style: italic; }
-strong { font-weight: 500; color: var(--parchment); }
+strong { font-weight: 500; color: var(--ink); }
 
 ::selection {
-  background: color-mix(in srgb, var(--brass) 45%, transparent);
-  color: var(--parchment);
+  background: color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--ink);
 }
 
 hr {
   border: 0;
-  border-top: 1px solid var(--tobacco);
+  border-top: 1px solid var(--rule);
   margin: 3.5rem 0;
 }
 
@@ -108,10 +109,10 @@ hr {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--night-3);
-  color: var(--parchment);
+  background: var(--paper-3);
+  color: var(--ink);
   padding: 0.6rem 0.9rem;
-  border: 1px solid var(--tobacco-strong);
+  border: 1px solid var(--rule-strong);
   font-family: var(--small-caps);
   font-size: 0.8rem;
   letter-spacing: 0.14em;
@@ -134,7 +135,7 @@ hr {
 .masthead {
   text-align: center;
   padding: 2rem 0 3rem;
-  border-bottom: 1px solid var(--tobacco);
+  border-bottom: 1px solid var(--rule);
   position: relative;
 }
 
@@ -144,7 +145,7 @@ hr {
   letter-spacing: 0.42em;
   text-transform: lowercase;
   font-variant: small-caps;
-  color: var(--brass);
+  color: var(--accent);
   margin-bottom: 2.5rem;
   font-weight: 500;
 }
@@ -157,7 +158,7 @@ hr {
   line-height: 1;
   letter-spacing: -0.015em;
   margin: 0 0 1.5rem;
-  color: var(--parchment);
+  color: var(--ink);
 }
 
 .mast-role {
@@ -167,8 +168,8 @@ hr {
   letter-spacing: 0.24em;
   text-transform: lowercase;
   font-variant: small-caps;
-  color: var(--parchment-mute);
-  max-width: 42ch;
+  color: var(--ink-mute);
+  max-width: 48ch;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -188,15 +189,15 @@ hr {
   font-weight: 400;
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   line-height: 1.4;
-  color: var(--parchment);
-  border-left: 2px solid var(--brass);
+  color: var(--ink);
+  border-left: 2px solid var(--accent);
   padding-left: 1.5rem;
   margin: 0 0 2.75rem;
   max-width: 42ch;
 }
 
 .bio {
-  color: var(--parchment);
+  color: var(--ink);
   font-size: 1.05rem;
   line-height: 1.72;
 }
@@ -210,14 +211,14 @@ hr {
   line-height: 0.85;
   float: left;
   padding: 0.1em 0.18em 0 0;
-  color: var(--brass);
+  color: var(--accent);
 }
 
 .contact-list {
   list-style: none;
   padding: 0;
   margin: 2.5rem 0 0;
-  border-top: 1px solid var(--tobacco);
+  border-top: 1px solid var(--rule);
   padding-top: 1.5rem;
 }
 .contact-list li {
@@ -225,7 +226,7 @@ hr {
   grid-template-columns: 12rem 1fr;
   gap: 1.5rem;
   padding: 0.55rem 0;
-  color: var(--parchment-mute);
+  color: var(--ink-mute);
   font-size: 0.98rem;
 }
 .contact-list .label {
@@ -235,9 +236,10 @@ hr {
   letter-spacing: 0.24em;
   text-transform: lowercase;
   font-variant: small-caps;
-  color: var(--brass);
+  color: var(--accent);
   padding-top: 0.15rem;
 }
+.contact-list li > span:not(.label) { color: var(--ink); }
 @media (max-width: 640px) {
   .contact-list li {
     grid-template-columns: 1fr;
@@ -256,7 +258,7 @@ hr {
   gap: 1.5rem;
   border: 0;
   margin: 5rem 0 3.5rem;
-  color: var(--brass);
+  color: var(--accent);
   font-size: 1.15rem;
   line-height: 1;
 }
@@ -264,24 +266,13 @@ hr {
   content: "";
   flex: 0 0 3.5rem;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent 0,
-    var(--tobacco-strong) 50%,
-    transparent 100%
-  );
 }
 .ornament::before {
-  background: linear-gradient(
-    to left,
-    transparent 0,
-    var(--tobacco-strong) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to left, transparent 0, var(--rule-strong) 50%, transparent 100%);
 }
-.ornament::after { background: linear-gradient(to right, transparent 0, var(--tobacco-strong) 50%, transparent 100%); }
-
-/* actual glyph via ::after… no, we use a text node in the HTML */
+.ornament::after {
+  background: linear-gradient(to right, transparent 0, var(--rule-strong) 50%, transparent 100%);
+}
 
 /* ============================================================
    Chapter tabs — table of contents / index
@@ -291,16 +282,16 @@ hr {
   grid-template-columns: repeat(5, 1fr);
   gap: 0;
   margin: 0 0 4rem;
-  border-top: 1px solid var(--tobacco-strong);
-  border-bottom: 1px solid var(--tobacco-strong);
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
 }
 .chapters button {
   appearance: none;
   background: transparent;
   border: 0;
-  border-left: 1px solid var(--tobacco);
+  border-left: 1px solid var(--rule);
   padding: 1.85rem 0.5rem 1.65rem;
-  color: var(--parchment-mute);
+  color: var(--ink-mute);
   cursor: pointer;
   text-align: center;
   transition: color 0.2s ease, background 0.28s ease;
@@ -310,15 +301,15 @@ hr {
 .chapters button:first-child { border-left: 0; }
 .chapters button:focus-visible {
   outline: none;
-  box-shadow: inset 0 0 0 2px var(--brass);
+  box-shadow: inset 0 0 0 2px var(--accent);
 }
 .chapters button:hover {
-  color: var(--parchment);
-  background: color-mix(in srgb, var(--brass) 5%, transparent);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
 }
 .chapters button[aria-selected="true"] {
-  color: var(--brass);
-  background: color-mix(in srgb, var(--brass) 7%, transparent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 .chapters button[aria-selected="true"]::after {
   content: "";
@@ -327,7 +318,7 @@ hr {
   right: 20%;
   bottom: -1px;
   height: 2px;
-  background: var(--brass);
+  background: var(--accent);
 }
 
 .chapter-numeral {
@@ -337,12 +328,12 @@ hr {
   font-weight: 400;
   font-size: 1.55rem;
   line-height: 1;
-  color: var(--brass);
+  color: var(--accent);
   margin-bottom: 0.45rem;
   letter-spacing: 0.02em;
 }
-.chapters button[aria-selected="true"] .chapter-numeral { color: var(--brass); }
-.chapters button:not([aria-selected="true"]) .chapter-numeral { color: var(--brass-deep); }
+.chapters button[aria-selected="true"] .chapter-numeral { color: var(--accent); }
+.chapters button:not([aria-selected="true"]) .chapter-numeral { color: var(--accent-deep); }
 
 .chapter-label {
   display: block;
@@ -385,7 +376,7 @@ hr {
 .panel-head {
   margin-bottom: 2.5rem;
   padding-bottom: 1.75rem;
-  border-bottom: 1px solid var(--tobacco);
+  border-bottom: 1px solid var(--rule);
 }
 .panel-eyebrow {
   font-family: var(--small-caps);
@@ -393,7 +384,7 @@ hr {
   letter-spacing: 0.36em;
   text-transform: lowercase;
   font-variant: small-caps;
-  color: var(--brass);
+  color: var(--accent);
   font-weight: 500;
   margin: 0 0 0.85rem;
 }
@@ -404,12 +395,12 @@ hr {
   font-size: clamp(2.25rem, 4.5vw, 3.25rem);
   line-height: 1;
   letter-spacing: -0.01em;
-  color: var(--parchment);
+  color: var(--ink);
   margin: 0;
 }
 .panel-lead {
   max-width: var(--measure);
-  color: var(--parchment);
+  color: var(--ink);
   font-size: 1.05rem;
   line-height: 1.72;
   margin-bottom: 3rem;
@@ -421,44 +412,157 @@ hr {
   line-height: 0.9;
   float: left;
   padding: 0.08em 0.15em 0 0;
-  color: var(--brass);
+  color: var(--accent);
 }
 
-/* ---------- entries (research / teaching / community) ---------- */
-.entries {
+/* ---------- entry groups (subsections within a panel) ---------- */
+.entry-group {
+  margin-bottom: 3.5rem;
+}
+.entry-group:last-child { margin-bottom: 0; }
+.entry-group-title {
+  font-family: var(--small-caps);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: var(--accent);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--rule);
   max-width: var(--measure);
 }
+
+/* ---------- citation entries (publications / talks) ---------- */
+.citation {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--rule);
+  max-width: var(--measure);
+}
+.citation:last-child { border-bottom: 0; }
+.citation-title {
+  font-family: var(--serif-body);
+  font-weight: 500;
+  font-size: 1.02rem;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0 0 0.35rem;
+  max-width: none;
+}
+.citation-title em { font-style: italic; }
+.citation-meta {
+  color: var(--ink-mute);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+}
+.citation-meta em { font-style: italic; color: var(--ink); }
+.citation-meta a { font-size: inherit; }
+
+/* ---------- block entries (positions / service) ---------- */
+.entries { max-width: var(--measure); }
 .entry {
-  padding: 2.25rem 0;
-  border-bottom: 1px solid var(--tobacco);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
 }
 .entry:last-child { border-bottom: 0; }
 .entry-title {
   font-family: var(--serif-display);
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 1.3;
-  color: var(--parchment);
-  margin: 0 0 0.55rem;
+  color: var(--ink);
+  margin: 0 0 0.35rem;
 }
 .entry-title em { font-style: italic; }
+.entry-role {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+}
 .entry-meta {
   font-family: var(--small-caps);
   font-size: 0.75rem;
   letter-spacing: 0.22em;
   text-transform: lowercase;
   font-variant: small-caps;
-  color: var(--brass);
+  color: var(--accent);
   margin: 0 0 0.85rem;
   font-weight: 500;
 }
 .entry-body {
-  color: var(--parchment-mute);
+  color: var(--ink-mute);
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.6;
 }
-.entry-body p { color: inherit; margin: 0 0 0.75em; }
+.entry-body p { color: inherit; margin: 0 0 0.5em; }
 .entry-body p:last-child { margin-bottom: 0; }
+.entry-body ul {
+  margin: 0.25rem 0 0 0;
+  padding-left: 1.15rem;
+  list-style: none;
+}
+.entry-body ul li {
+  position: relative;
+  padding-left: 0.35rem;
+  margin-bottom: 0.35em;
+}
+.entry-body ul li::before {
+  content: "·";
+  position: absolute;
+  left: -0.75rem;
+  top: 0;
+  color: var(--accent);
+}
+
+/* ---------- CV list (education / degrees) ---------- */
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: var(--measure);
+}
+.cv-list > li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.cv-list > li:last-child { border-bottom: 0; }
+.cv-list-primary {
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.cv-list-primary em { font-style: italic; }
+.cv-list-inst {
+  font-family: var(--small-caps);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: var(--ink-mute);
+  white-space: nowrap;
+}
+.cv-list-supplemental {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--small-caps);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: var(--ink-mute);
+}
+@media (max-width: 640px) {
+  .cv-list > li { grid-template-columns: 1fr; gap: 0.15rem; }
+}
 
 /* ---------- award list ---------- */
 .award-list {
@@ -466,14 +570,14 @@ hr {
   padding: 0;
   margin: 0;
   max-width: var(--measure);
-  border-top: 1px solid var(--tobacco);
+  border-top: 1px solid var(--rule);
 }
 .award-list > li {
   display: grid;
   grid-template-columns: 7.5rem 1fr;
   gap: 1.75rem;
   padding: 1.35rem 0;
-  border-bottom: 1px solid var(--tobacco);
+  border-bottom: 1px solid var(--rule);
   align-items: baseline;
 }
 .award-year {
@@ -481,25 +585,34 @@ hr {
   font-style: italic;
   font-weight: 400;
   font-size: 1.35rem;
-  color: var(--brass);
+  color: var(--accent);
   padding-top: 0.15rem;
 }
 .award-name {
-  margin: 0 0 0.15rem;
-  color: var(--parchment);
+  margin: 0 0 0.2rem;
+  color: var(--ink);
   font-size: 1.05rem;
   line-height: 1.4;
 }
+.award-name em { font-style: italic; }
 .award-org {
   margin: 0;
-  color: var(--parchment-mute);
+  color: var(--ink-mute);
   font-family: var(--small-caps);
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: lowercase;
   font-variant: small-caps;
 }
-.award-list li.marker .award-year { color: var(--oxblood); }
+.award-list li.marker .award-year { color: var(--marker); }
+.award-note {
+  margin: 0.4rem 0 0;
+  color: var(--ink-mute);
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.award-note em { color: var(--ink); }
 @media (max-width: 640px) {
   .award-list > li {
     grid-template-columns: 1fr;
@@ -512,7 +625,7 @@ hr {
 /* ---------- personal (prose) ---------- */
 .personal-body {
   max-width: var(--measure);
-  color: var(--parchment);
+  color: var(--ink);
   font-size: 1.05rem;
   line-height: 1.72;
 }
@@ -523,21 +636,9 @@ hr {
   line-height: 0.9;
   float: left;
   padding: 0.08em 0.15em 0 0;
-  color: var(--brass);
+  color: var(--accent);
 }
 .personal-body p { color: inherit; margin: 0 0 1.25em; max-width: none; }
-
-/* ---------- placeholder callouts ---------- */
-/* Anything wrapped in [square brackets] in the source is unset content.
-   This subtle style helps the writer see what still needs replacing. */
-.placeholder-hint {
-  display: inline-block;
-  padding: 0.1em 0.35em;
-  background: color-mix(in srgb, var(--oxblood) 22%, transparent);
-  border-bottom: 1px dashed var(--oxblood);
-  color: var(--parchment);
-  font-style: normal;
-}
 
 /* ============================================================
    Colophon (footer)
@@ -545,9 +646,9 @@ hr {
 .colophon {
   margin-top: 6rem;
   padding-top: 2.5rem;
-  border-top: 1px solid var(--tobacco);
+  border-top: 1px solid var(--rule);
   text-align: center;
-  color: var(--parchment-dim);
+  color: var(--ink-dim);
   font-family: var(--small-caps);
   font-size: 0.75rem;
   letter-spacing: 0.24em;
